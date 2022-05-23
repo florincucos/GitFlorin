@@ -7,6 +7,14 @@ export class CommonMethods {
         cy.visit(pageURL)
     };
 
+    //this method will wait for spinner to dissapear if set to true
+    waitWhileSpinnerIsDisplayed(waitForSpinner = false){
+        if(waitForSpinner) {
+          cy.get('selector spinner').should('be visible');
+        };
+        cy.get('selector spinner').should('not.exist');
+    };
+
     //this method will hover an element
     hoverElement(webElement) {
         cy.get(webElement).trigger('mouseover');
