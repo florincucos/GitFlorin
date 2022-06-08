@@ -1,0 +1,22 @@
+XPATH (xml path):
+     - absolute -> if there are any changes made in the path of element, it will fail
+                      -> starts with / and goes from very top to the bottom
+     - relative -> starts with // and constructs the element using attributes
+                    -> EX: select price for all new products : //*[contains(@class, 'eyecatcher--new')]/parent::*/parent::*//*[contains(@class , 'price-row__price')]
+                                                                                       sau: //div[@class='eyecatcher eyecatcher--round eyecatcher--new']/parent::*/parent::*//*[contains(@class , 'price-row__price')]
+                               [contains (@attributeName, 'part of the attribute value')] -> selects attributes which contain certain text
+
+INSTALL:
+                  npm install -D cypress-xpath
+
+                 Then include in your project's cypress/support/index.js
+                 require('cypress-xpath')
+
+TOOLS:
+
+Xpath cheatsheet:
+https://devhints.io/xpath
+Chrome add-on for xpath selectors:
+https://chrome.google.com/webstore/detail/chropath/ljngjbnaijcbncmcnjfhigebomdlkcjo?hl=en-US
+Video XPATH Beginner:
+https://youtu.be/XyBxEnyBb0A
